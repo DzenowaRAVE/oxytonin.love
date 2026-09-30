@@ -30,12 +30,24 @@ services:
     networks:
       - web_network
 
-  # 3. Your Second Website (subdomain)
+  # 3. Your Second Website (test)
   second_site:
     image: nginx:alpine
     container_name: my_second_website
     restart: always
     volumes:
       - ./site2_html:/usr/share/nginx/html
+    networks:
+      - web_network
+
+  # 4. SearXNG Metasearch Engine
+  searxng:
+    image: docker.io/searxng/searxng:latest
+    container_name: searxng
+    restart: always
+    volumes:
+      - ./searxng:/etc/searxng
+    environment:
+      - SEARXNG_BASE_URL=https://search.oxytonin.love/
     networks:
       - web_network

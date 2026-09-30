@@ -1,0 +1,8 @@
+use_default_settings: true
+server:
+  secret_key: "d7f5a418d2d9f9cbda49647f5fbc436c7402b09e87989cbe079d353dd388d29d"
+  limiter: false
+  image_proxy: true
+search:
+  safe_search: 0
+  autocomplete: "duckduckgo"
